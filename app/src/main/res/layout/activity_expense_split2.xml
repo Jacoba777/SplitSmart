@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/message"
+        android:text="@string/message_expense_split_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="100dp"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/message"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/select_a_group_member"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_use_custom_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/switch_use_custom_amount"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/switch_use_custom_amount"
+        android:text="@string/use_custom_amount"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_custom_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switch_use_custom_amount"
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
+        <EditText
+            android:id="@+id/edittext_custom_amount"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:inputType="numberDecimal"/>
+        <TextView
+            android:id="@+id/label_custom_amount"
+            android:labelFor="@id/edittext_custom_amount"
+            android:text="@string/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_custom_amount"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-5dp"
+            android:layout_alignStart="@id/edittext_custom_amount"/>
+        <Spinner
+            android:id="@+id/spinner_amount_type"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/edittext_custom_amount"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+        <Button
+            android:id="@+id/button_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_amount_type"
+            android:layout_centerHorizontal="true"
+            android:text="@string/update"
+            android:layout_marginTop="20dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_custom_amount"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/button_next"
+            android:text="@string/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</RelativeLayout>
